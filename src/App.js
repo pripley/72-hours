@@ -1,7 +1,9 @@
 import './App.css';
-import Nasa from './Nasa/Nasa';
-import Weather from './Weather/Weather';
-import Ticketmaster from './Ticketmaster/Ticketmaster'
+
+import Nasa from './nasa/Nasa';
+import Weather from './weather/Weather';
+import Ticketmaster from './ticketmaster/Ticketmaster';
+
 
 function App() {
   return (
