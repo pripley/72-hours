@@ -9,12 +9,17 @@ import Ticketmaster from './ticketmaster/Ticketmaster';
 
 function App() {
   const [location, setLocation] = useState({}) 
-
-  let locationGrabber = () => {
-       navigator.geolocation.getCurrentPosition((loc) => {
-        
+  const [latitude, setLatitude] = useState(0)
+  const [longitude, setLongitude] = useState(0)
+  
+ async function locationGrabber(){
+        await navigator.geolocation.getCurrentPosition((loc) => {
+        setLatitude(loc.coords.latitude)
+        setLongitude(loc.coords.longitude)
         setLocation(loc)
-        console.log(location)
+        localStorage.setItem('latitude', loc.coords.latitude )
+        localStorage.setItem('longitude', loc.coords.longitude)
+        console.log(loc)
        })
        
 
@@ -27,7 +32,7 @@ function App() {
     <div className="App">
       <Nasa location={location}/>
       <Weather location={location}/>
-      <Ticketmaster location={location}/>
+      <Ticketmaster lat={latitude} long={longitude}/>
     </div>
   );
 }
