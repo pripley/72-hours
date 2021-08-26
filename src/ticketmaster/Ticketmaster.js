@@ -4,7 +4,7 @@ import TicketCards from './TicketCards';
 
 
 
-const Ticketmaster = () => {
+const Ticketmaster = (props) => {
     let location = '39.613579,-86.117882';
 let url = `https://app.ticketmaster.com/discovery/v2/events.json?latlong=${location}&apikey=ZO5H86TC4ovXr2EiURqfW1K75YwE9NQq`
     const [eventData, setEventData] = useState([])
