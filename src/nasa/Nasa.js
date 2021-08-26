@@ -4,8 +4,8 @@ const baseURL = "https://api.nasa.gov/planetary/earth/imagery";
 const key = "g2Aa7esA2tdERwMZ1r7P0RlHzNLvAfuvMLaONh9R";
 
 const Nasa = () => {
-  let lon = "100.75";
-  let lat = "1.5";
+  let lon = "86.1581";
+  let lat = "39.7684";
   const [image, displayImage] = useState('');
 
   const fetchResults = () => {
