@@ -1,8 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
-import Nasa from './nasa/nasa';
-import Weather from './weather/weather';
-import Ticketmaster from './ticketmaster/ticketmaster';
+import Nasa from './nasa/Nasa';
+import Weather from './weather/Weather';
+import Ticketmaster from './ticketmaster/Ticketmaster';
 
 function App() {
   return (

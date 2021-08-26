@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Nasa = () => {
-    return ( <div>Paul's branch</div> );
+    return ( <div>NASA API</div> );
 }
  
 export default Nasa;
