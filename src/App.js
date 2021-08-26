@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import Nasa from './nasa/Nasa';
 import Weather from './weather/Weather';
