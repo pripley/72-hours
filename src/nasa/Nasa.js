@@ -1,16 +1,19 @@
 import React, { useEffect, useState } from "react";
 
 const baseURL = "https://api.nasa.gov/planetary/earth/imagery";
-const key = "g2Aa7esA2tdERwMZ1r7P0RlHzNLvAfuvMLaONh9R";
+const key = "lSFZ05JWCGUDAxIivpigGy0h4Gg2mJtd2SkKQeFb";
 
 const Nasa = (props) => {
-  let lat = "1.5";
-  let lon = "100.75";
+  // let long = "100.75"
+  // let lat = "1.5"
+  console.log(props);
+  let lat = props.lat === 0 ? localStorage.getItem("latitude") : props.lat;
+  let long = props.long === 0 ? localStorage.getItem("longitude") : props.long;
 
   const [image, displayImage] = useState("");
 
   const fetchResults = async () => {
-    let url = `${baseURL}?lon=${lon}&lat=${lat}&api_key=${key}`;
+    let url = `${baseURL}?lon=${long}&lat=${lat}&date=2021-08-21&api_key=${key}`;
 
     fetch(url)
       .then((res) => res.blob())
@@ -18,7 +21,9 @@ const Nasa = (props) => {
       .catch((err) => console.log(err));
   };
 
-  useEffect(fetchResults, []);
+  useEffect(() => {
+    fetchResults();
+  }, []);
 
   return (
     <div className="main">
