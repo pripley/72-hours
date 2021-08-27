@@ -5,27 +5,34 @@ import TicketCards from './TicketCards';
 
 
 const Ticketmaster = (props) => {
-    let location = '39.613579,-86.117882';
-let url = `https://app.ticketmaster.com/discovery/v2/events.json?latlong=${location}&apikey=ZO5H86TC4ovXr2EiURqfW1K75YwE9NQq`
+   
     const [eventData, setEventData] = useState([])
-    const [trigger, setTrigger] = useState(false)
-    let fetchTicket= () =>{
-        fetch(url)
-        .then(res => res.json())
-        .then((json) => {
-            setEventData(json._embedded.events)
-            setTrigger(true)
-            console.log(json)
-        })
+    
+    async function  fetchTicket(url){
+        let response = await fetch(url)
+        let data = await response.json()
+        
+        
+        
+        setEventData(data._embedded.events)
+            
+            console.log(data)
+        
     } 
 
     useEffect(() => {
-        fetchTicket()
+        
+        let lat = props.lat === 0 ? localStorage.getItem('latitude') : props.lat
+        let long = props.long === 0 ? localStorage.getItem('longitude') : props.lat
+        
+        let url = `https://app.ticketmaster.com/discovery/v2/events.json?latlong=${lat.toString()},${long.toString()}&apikey=ZO5H86TC4ovXr2EiURqfW1K75YwE9NQq`
+        
+        fetchTicket(url)
     }, [])
     return ( <div>
         <h1>hello from ticket</h1>
     
-        <TicketCards eventdata={eventData} trigger={trigger}/>
+        <TicketCards eventdata={eventData} />
     
     </div> )
 }
