@@ -23,5 +23,6 @@ const TicketCards = (props) => {
 }
  
 export default TicketCards;
+sfc
 
 
