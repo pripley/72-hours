@@ -31,7 +31,7 @@ function App() {
   return (
     <div className="App">
       <Nasa location={location}/>
-      <Weather location={location}/>
+      <Weather lat={latitude} long={longitude}/>
       <Ticketmaster lat={latitude} long={longitude}/>
     </div>
   );
