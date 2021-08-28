@@ -61,8 +61,8 @@ const handleSubmit= () => {
     return ( <div>
         <h2>Current Weather:</h2>
         <WeatherResults results={results} temp={temp}/>
-        <button onClick={handleSubmit}></button> 
-        Hello from Weather
+        <button onClick={handleSubmit}>Temp:</button> 
+        
     </div> );
 }
  
