@@ -3,8 +3,11 @@ import React, { useState, useEffect } from "react";
 import Nasa from "./nasa/Nasa";
 import Weather from "./weather/Weather";
 import Ticketmaster from "./ticketmaster/Ticketmaster";
+
+import Footer from "./Components/Footer";
 import Header from "./Components/Header";
 import Target from "./Components/Target";
+
 
 
 function App() {
@@ -49,22 +52,29 @@ function App() {
   return (
     <div className="main">
       <div className="mainDiv">
-        <Header />
+ <Header />
+        <div className="mainContent">       
         <div>
+
           <div>
-            
+            <div></div>
+            <Nasa lat={latitude} long={longitude} />
+          </div>
+          <div>
+            <Weather lat={latitude} long={longitude} />
+            <Ticketmaster lat={latitude} long={longitude} />
           </div>
           <Nasa lat={latitude} long={longitude} />
-        </div>
-        
-          <Target />
+        </div>      
         
         <div>
           <Weather lat={latitude} long={longitude} />
           <Ticketmaster lat={latitude} long={longitude} />
+
         </div>
+        <Footer />
       </div>
-      <Target />
+     
     </div>
     
   );
