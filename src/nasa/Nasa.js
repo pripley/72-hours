@@ -1,29 +1,37 @@
 import React, { useEffect, useState } from "react";
 
 const baseURL = "https://api.nasa.gov/planetary/earth/imagery";
-const key = "g2Aa7esA2tdERwMZ1r7P0RlHzNLvAfuvMLaONh9R";
+const key = "lSFZ05JWCGUDAxIivpigGy0h4Gg2mJtd2SkKQeFb";
 
-const Nasa = () => {
-  let lon = "100.75";
-  let lat = "1.5";
-  const [image, displayImage] = useState('');
+const Nasa = (props) => {
+  // let long = "100.75"
+  // let lat = "1.5"
+  console.log(props);
+  let lat = props.lat === 0 ? localStorage.getItem("latitude") : props.lat;
+  let long = props.long === 0 ? localStorage.getItem("longitude") : props.long;
 
-  const fetchResults = () => {
-    let url = `${baseURL}?lat=${lat}&lon=${lon}&api_key=${key}`;
+  const [image, displayImage] = useState("");
+
+  const fetchResults = async () => {
+    let url = `${baseURL}?lon=${long}&lat=${lat}&date=2021-08-21&api_key=${key}`;
 
     fetch(url)
-      .then((res) => res.blob())      
+      .then((res) => res.blob())
       .then((image) => displayImage(URL.createObjectURL(image)))
       .catch((err) => console.log(err));
-      
   };
 
-  useEffect(fetchResults,[])
+  useEffect(() => {
+    fetchResults();
+  }, []);
 
   return (
     <div className="main">
-      <div className="mainDiv">        
-        <p><img src={image} alt="" style={{ width: 300 }} /></p>
+      <div className="mainDiv">
+        <h2>NASA Landsat 8 image</h2>
+        <p>
+          <img src={image} alt="" style={{ width: 300 }} />
+        </p>
       </div>
     </div>
   );
