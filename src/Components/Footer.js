@@ -1,15 +1,11 @@
-import React from "react"
-import { Row } from "reactstrap"
+import React from "react";
 
 const Footer = () => {
-    return (
-        <footer>
-            <Row>
-                <p>&copy; RJP Intelligence Agency</p>
-            </Row>
-        </footer>
-    )
-}
+  return (
+    <footer>
+      <p>&copy; RJP Intelligence Agency</p>
+    </footer>
+  );
+};
 
-export default Footer
-
+export default Footer;
