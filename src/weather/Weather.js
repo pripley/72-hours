@@ -10,6 +10,8 @@ const key= '34e2880098d5257b2af9558fa92656e1'
 
 const Weather = (props) => {
     const [results, setResults] = useState('');
+    const [description, setDescription] = useState('');
+    const [humidity, setHumidity] = useState('');
     
    const [temp, setTemp] = useState('Imperial:');
     const [toggle, setToggle] = useState(false);
@@ -26,7 +28,12 @@ const Weather = (props) => {
         .then(res => res.json())
         .then(response => {
             console.log(response);
+            console.log(response.main.temp);
             setResults(response.main.temp)
+             console.log(response.weather[0].description);   
+            setDescription(response.weather[0].description)
+            console.log(response.main.humidity)
+            setHumidity(response.main.humidity)
         })
         .catch(err => console.log(err));
     }
@@ -60,8 +67,8 @@ const handleSubmit= () => {
     
     return ( <div>
         <h2>Current Weather:</h2>
-        <WeatherResults results={results} temp={temp}/>
-        <button onClick={handleSubmit}>Temp:</button> 
+        <WeatherResults results={results} description={description} temp={temp} humidity={humidity} />
+        <button onClick={handleSubmit}>For Agents Only!:</button> 
         
     </div> );
 }
