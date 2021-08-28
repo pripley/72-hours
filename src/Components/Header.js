@@ -29,7 +29,7 @@ const Header = () => {
         OperationGenerator()
       }, []);
     return ( 
-        <div>
+        <div className="header">
             <h1>Operation: {operationCol} {operationAni}</h1>
         </div>
      );

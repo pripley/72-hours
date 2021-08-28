@@ -23,7 +23,7 @@ const Ticketmaster = (props) => {
   }, []);
   return (
     <div className="ticketmaster">
-      <h2>Local Events</h2>
+      <h2>Possible Contact Locations</h2>
       <TicketCards eventdata={eventData} />
     </div>
   );
