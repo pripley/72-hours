@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import Nasa from "./nasa/Nasa";
 import Weather from "./weather/Weather";
 import Ticketmaster from "./ticketmaster/Ticketmaster";
+import Footer from "./Components/Footer";
 
 function App() {
   const [location, setLocation] = useState({});
@@ -26,16 +27,17 @@ function App() {
   return (
     <div className="main">
       <div className="mainDiv">
-        <div>
+        <div className="mainContent">
           <div>
-            
+            <div></div>
+            <Nasa lat={latitude} long={longitude} />
           </div>
-          <Nasa lat={latitude} long={longitude} />
+          <div>
+            <Weather lat={latitude} long={longitude} />
+            <Ticketmaster lat={latitude} long={longitude} />
+          </div>
         </div>
-        <div>
-          <Weather lat={latitude} long={longitude} />
-          <Ticketmaster lat={latitude} long={longitude} />
-        </div>
+        <Footer />
       </div>
     </div>
   );
