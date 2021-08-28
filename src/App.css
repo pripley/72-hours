@@ -1,38 +1,90 @@
-.App {
+body {
+  background-color: #1a1a1a;
+  color: white;
+  box-sizing: border-box;
+}
+
+a {
+  color: gray;
+  text-decoration: none;
+}
+
+a:hover {
+  color: darkgray;
+}
+
+h1 {
+  margin-top: 0;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+}
+
+.mainDiv {
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  padding: 40px;
+}
+
+.mainContent {
+  display: flex;
+  flex-direction: row;
+}
+
+.mainContent > div {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.nasa {
+  margin: 0px 0px 10px 0px;
+}
+
+.nasa img {
+  width: 500px;
+  border-radius: 20px;
+}
+
+.ticketmaster {
+  background-color: #161616;
+  padding: 5px 30px 20px;
+  border-radius: 20px;
+}
+
+.target {
+  background-color: #161616;
+  padding: 5px 30px 20px;
+  border-radius: 20px;
+}
+
+.weather {
+  margin-bottom: 20px;
+}
+
+.header {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+footer {  
+  margin: 10px 20px;
+  
+  text-align: right;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+button {
+  background-color: rgb(49, 49, 49);
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 5px 10px;
   color: white;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.buttonContainer {
+  display: flex;
+  justify-content: center;
 }
