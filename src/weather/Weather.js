@@ -1,14 +1,11 @@
+import React, { useState, useEffect } from "react";
+import WeatherResults from "./WeatherResults";
 
-import React, {useState, useEffect} from 'react';
-import WeatherResults from './WeatherResults'
-
-
-const baseUrl= 'api.openweathermap.org/data/2.5/weather?'
-const key= '34e2880098d5257b2af9558fa92656e1'
-
-
+const baseUrl = "api.openweathermap.org/data/2.5/weather?";
+const key = "34e2880098d5257b2af9558fa92656e1";
 
 const Weather = (props) => {
+
     const [results, setResults] = useState('');
     const [description, setDescription] = useState('');
     const [humidity, setHumidity] = useState('');
