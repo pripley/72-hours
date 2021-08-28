@@ -29,6 +29,7 @@ const Nasa = (props) => {
 
   return (
     <div className="nasa">
+        <h2>Target Location</h2>
       <p>
         <img src={image} alt="Landsat 8 Image" />
       </p>

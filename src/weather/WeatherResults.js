@@ -2,13 +2,13 @@ const WeatherResults = (props) => {
     return ( 
         <div>
          <p>
-             {props.temp}{props.results}
+            Temp: {props.temp}{props.results}
          </p>
          <p>
-             {props.description}
+            Weather Condition: {props.description}
          </p>
          <p>
-             {props.humidity}
+            Humidity: {props.humidity}
          </p>
         </div>
      );

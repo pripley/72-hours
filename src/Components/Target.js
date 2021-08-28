@@ -36,8 +36,8 @@ const Target = () => {
         targetGenerator()
     }, []);
     return ( 
-        <div>
-            <h3>Target: {firstName} {lastName}</h3>
+        <div className="target">
+            <h3>Target Name: {firstName} {lastName}</h3>
             <p>Crime: {crime}</p>
             <p>Affiliation: {affiliation}</p>
         </div>
