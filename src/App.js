@@ -24,12 +24,19 @@ function App() {
     locationGrabber();
   }, []);
   return (
-    <div className="App">
-
-      <Nasa lat={latitude} long={longitude}/>
-      <Weather lat={latitude} long={longitude}/>
-      <Ticketmaster lat={latitude} long={longitude}/>
-
+    <div className="main">
+      <div className="mainDiv">
+        <div>
+          <div>
+            
+          </div>
+          <Nasa lat={latitude} long={longitude} />
+        </div>
+        <div>
+          <Weather lat={latitude} long={longitude} />
+          <Ticketmaster lat={latitude} long={longitude} />
+        </div>
+      </div>
     </div>
   );
 }
